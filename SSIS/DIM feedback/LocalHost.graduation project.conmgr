@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalHost.graduation project"
+  DTS:DTSID="{C8787DB2-23BE-4F5A-8F7E-78019B5497D8}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=.;Initial Catalog=graduation project;Provider=SQLOLEDB.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-DIM feedback-{C8787DB2-23BE-4F5A-8F7E-78019B5497D8}LocalHost.graduation project;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

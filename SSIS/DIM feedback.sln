@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36017.23 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "DIM feedback", "DIM feedback\DIM feedback.dtproj", "{E9B770AD-7352-9008-4B5C-2CFF33D81C56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9B770AD-7352-9008-4B5C-2CFF33D81C56}.Development|Default.ActiveCfg = Development
+		{E9B770AD-7352-9008-4B5C-2CFF33D81C56}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A9963BD-E093-42B2-A5CA-D9D0F5A651B8}
+	EndGlobalSection
+EndGlobal

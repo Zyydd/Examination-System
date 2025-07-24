@@ -1,0 +1,3359 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/1/2025 1:15:17 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-8UGBBNS"
+  DTS:CreatorName="DESKTOP-8UGBBNS\ziad"
+  DTS:DTSID="{6A466E4C-1474-417E-8863-2B6596BF5204}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{C7E68271-9FE2-4479-A753-7970E376346B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Graduate DF"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4D6EBBC0-6DCD-4F6A-BA86-3F2FF93EB09A}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Graduate DF"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Graduate DF\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Graduate DF\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Graduate DF\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Graduate DF\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\Derived Column.Outputs[Derived Column Output].Columns[Enddate]"
+                      dataType="dbTimeStamp"
+                      description="Enddate"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Graduate DF\Derived Column.Outputs[Derived Column Output].Columns[Enddate]"
+                      name="Enddate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Graduate DF\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Graduate DF\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Graduate DF\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Graduate DF\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Output].Columns[Startdate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Output].Columns[Startdate]"
+                      name="Startdate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Output].Columns[iscurrent]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Output].Columns[iscurrent]"
+                      name="iscurrent"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_UI1)1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI1)1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Graduate DF\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Graduate DF\Graduates Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Graduates Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Com_city], [Com_id_BK], [Com_name], [Country], [Field], [Git_URL], [Grad_id_BK], [Grad_name], [Gradute_Date], [Hiring_date], [Job_title], [Job_Type], [LinkedIn_URL], [Mas_title], [Salary_Range], [SSC], [Track_SK_fk], [University],[Startdate],[Enddate] FROM [dbo].[Dim_Graduate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere">[Startdate] IS NOT NULL AND [Enddate] IS NULL</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{2075C602-5319-4ED7-BB9F-8ED0B0B6385A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.graduation project_DWH]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[C_City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="C_City"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Com_city]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_City]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Com_ID]"
+                      cachedDataType="i4"
+                      cachedName="Com_ID"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Com_id_BK]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Com_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Com_Name"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Com_name]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Field]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Field"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Field]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Field]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Git_URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Git_URL"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Git_URL]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Git_URL]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Grad_ID]"
+                      cachedDataType="i4"
+                      cachedName="Grad_ID"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Grad_id_BK]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Grad_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Grad_Name"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Grad_name]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Graduate_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Graduate_Date"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Gradute_Date]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Graduate_Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Hiring_date]"
+                      cachedDataType="dbDate"
+                      cachedName="Hiring_date"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Hiring_date]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hiring_date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Job_title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Job_title"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Job_title]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_title]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Job_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Job_Type"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Job_Type]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_Type]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[LinkedIn_URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="LinkedIn_URL"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[LinkedIn_URL]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[LinkedIn_URL]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Mas_title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Mas_title"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Mas_title]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mas_title]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Salary_Range]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Salary_Range"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Salary_Range]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Salary_Range]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[SSC]"
+                      cachedDataType="ui1"
+                      cachedName="SSC"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SSC]"
+                      lineageId="Package\Graduate DF\SSC.Outputs[Derived Column Output].Columns[SSC]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Track_SK]"
+                      cachedDataType="i4"
+                      cachedName="Track_SK"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Track_SK_fk]"
+                      lineageId="Package\Graduate DF\track Lookup.Outputs[Lookup Match Output].Columns[Track_SK]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[University]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="University"
+                      externalMetadataColumnId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[University]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[University]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Com_city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Com_city" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Com_id_BK]"
+                      dataType="i4"
+                      name="Com_id_BK" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Com_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Com_name" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Field]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Field" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Git_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Git_URL" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Grad_id_BK]"
+                      dataType="i4"
+                      name="Grad_id_BK" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Grad_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Grad_name" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Gradute_Date]"
+                      dataType="dbDate"
+                      name="Gradute_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Hiring_date]"
+                      dataType="dbDate"
+                      name="Hiring_date" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Job_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Job_title" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Job_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Job_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[LinkedIn_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="LinkedIn_URL" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Mas_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Mas_title" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Salary_Range]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Salary_Range" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[SSC]"
+                      dataType="ui1"
+                      name="SSC" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Track_SK_fk]"
+                      dataType="i4"
+                      name="Track_SK_fk" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[University]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="University" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Startdate]"
+                      dataType="dbTimeStamp"
+                      name="Startdate" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Enddate]"
+                      dataType="dbTimeStamp"
+                      name="Enddate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\Graduates Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Graduate DF\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Graduate]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Graduate DF\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{2075C602-5319-4ED7-BB9F-8ED0B0B6385A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.graduation project_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Grad_ID]"
+                      cachedDataType="i4"
+                      cachedName="Grad_ID"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Grad_id_BK]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Grad_ID]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Com_ID]"
+                      cachedDataType="i4"
+                      cachedName="Com_ID"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Com_id_BK]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Com_ID]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Mas_title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Mas_title"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mas_title]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Mas_title]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[University]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="University"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[University]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[University]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Field]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Field"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Field]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Field]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Com_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Com_Name"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Com_name]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Com_Name]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[C_City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="C_City"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Com_city]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[C_City]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Job_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Job_Type"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Job_Type]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Job_Type]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Hiring_date]"
+                      cachedDataType="dbDate"
+                      cachedName="Hiring_date"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Hiring_date]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Hiring_date]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Job_title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Job_title"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Job_title]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Job_title]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Salary_Range]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Salary_Range"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Salary_Range]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Salary_Range]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Grad_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Grad_Name"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Grad_name]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Grad_Name]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Git_URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Git_URL"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Git_URL]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Git_URL]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[LinkedIn_URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="LinkedIn_URL"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[LinkedIn_URL]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[LinkedIn_URL]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Graduate_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Graduate_Date"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gradute_Date]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Graduate_Date]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Startdate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Startdate"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Startdate]"
+                      lineageId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Output].Columns[Startdate]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[SSC]"
+                      cachedDataType="ui1"
+                      cachedName="SSC"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SSC]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[SSC]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[Track_SK]"
+                      cachedDataType="i4"
+                      cachedName="Track_SK"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Track_SK_fk]"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Track_SK]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].Columns[iscurrent]"
+                      cachedDataType="ui1"
+                      cachedName="iscurrent"
+                      externalMetadataColumnId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Iscurrent]"
+                      lineageId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Output].Columns[iscurrent]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Grad_SK]"
+                      dataType="i4"
+                      name="Grad_SK" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Grad_id_BK]"
+                      dataType="i4"
+                      name="Grad_id_BK" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Com_id_BK]"
+                      dataType="i4"
+                      name="Com_id_BK" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Mas_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Mas_title" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[University]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="University" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Field]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Field" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Com_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Com_name" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Com_city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Com_city" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Job_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Job_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Hiring_date]"
+                      dataType="dbDate"
+                      name="Hiring_date" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Job_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Job_title" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Salary_Range]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Salary_Range" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Grad_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Grad_name" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Git_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Git_URL" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[LinkedIn_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="LinkedIn_URL" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gradute_Date]"
+                      dataType="dbDate"
+                      name="Gradute_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Startdate]"
+                      dataType="dbTimeStamp"
+                      name="Startdate" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Enddate]"
+                      dataType="dbTimeStamp"
+                      name="Enddate" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Iscurrent]"
+                      dataType="ui1"
+                      name="Iscurrent" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SSC]"
+                      dataType="ui1"
+                      name="SSC" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Track_SK_fk]"
+                      dataType="i4"
+                      name="Track_SK_fk" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Graduate DF\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Graduate DF\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Graduate] SET [Enddate] = ? 
+, iscurrent =0
+WHERE [Com_id_BK] = ? AND [Grad_id_BK] = ? AND [Enddate] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Graduate DF\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{2075C602-5319-4ED7-BB9F-8ED0B0B6385A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.graduation project_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input].Columns[Com_ID]"
+                      cachedDataType="i4"
+                      cachedName="Com_ID"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_ID]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input].Columns[Grad_ID]"
+                      cachedDataType="i4"
+                      cachedName="Grad_ID"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_ID]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input].Columns[Enddate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Enddate"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Graduate DF\Derived Column.Outputs[Derived Column Output].Columns[Enddate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Graduate DF\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Graduate DF\OLE DB Command 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Graduate] SET [Job_title] = ?,[Job_Type] = ?,[LinkedIn_URL] = ?,[University] = ? WHERE [Com_id_BK] = ? AND [Grad_id_BK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Graduate DF\OLE DB Command 1.Connections[OleDbConnection]"
+                  connectionManagerID="{2075C602-5319-4ED7-BB9F-8ED0B0B6385A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.graduation project_DWH]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Com_ID]"
+                      cachedDataType="i4"
+                      cachedName="Com_ID"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_ID]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Grad_ID]"
+                      cachedDataType="i4"
+                      cachedName="Grad_ID"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_ID]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Job_title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Job_title"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_title]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Job_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Job_Type"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_Type]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LinkedIn_URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="LinkedIn_URL"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[LinkedIn_URL]" />
+                    <inputColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[University]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="University"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[University]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="i4"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Graduate DF\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Graduate DF\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Graduates.*, Company.Com_ID, Company.Com_Name, Company.Hiring_date, Company.Job_title, Company.Salary_Range, Company.Job_Type, Company.C_City, Master.Mas_title, Master.Country, Master.University, Master.Field
+
+FROM     Graduates left outer JOIN
+                  Master ON Graduates.Grad_ID = Master.Grad_ID 
+				  left outer join Company ON Graduates.Grad_ID = Company.Grad_ID</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Graduate DF\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{ABEC96AC-B649-4401-818F-3FA16A3357E9}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.graduation project]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Grad_ID]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_ID]"
+                      name="Grad_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Grad_Name]"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_Name]"
+                      name="Grad_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Git_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Git_URL]"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Git_URL]"
+                      name="Git_URL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[LinkedIn_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LinkedIn_URL]"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[LinkedIn_URL]"
+                      name="LinkedIn_URL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Graduate_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Graduate_Date]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Graduate_Date]"
+                      name="Graduate_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Track_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Track_ID]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Track_ID]"
+                      name="Track_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Com_ID]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_ID]"
+                      name="Com_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Com_Name]"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_Name]"
+                      name="Com_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hiring_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Hiring_date]"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hiring_date]"
+                      name="Hiring_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Job_title]"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_title]"
+                      name="Job_title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Salary_Range]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Salary_Range]"
+                      length="100"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Salary_Range]"
+                      name="Salary_Range"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Job_Type]"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_Type]"
+                      name="Job_Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_City]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_City]"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_City]"
+                      name="C_City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mas_title]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mas_title]"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mas_title]"
+                      name="Mas_title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[University]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[University]"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[University]"
+                      name="University"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Field]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Field]"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Field]"
+                      name="Field"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Grad_ID]"
+                      dataType="i4"
+                      name="Grad_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Grad_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Grad_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Git_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Git_URL" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LinkedIn_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="LinkedIn_URL" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Graduate_Date]"
+                      dataType="dbDate"
+                      name="Graduate_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Track_ID]"
+                      dataType="i4"
+                      name="Track_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Com_ID]"
+                      dataType="i4"
+                      name="Com_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Com_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Com_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Hiring_date]"
+                      dataType="dbDate"
+                      name="Hiring_date" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Job_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Job_title" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Salary_Range]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Salary_Range" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Job_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Job_Type" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[C_City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="C_City" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Mas_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Mas_title" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[University]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="University" />
+                    <externalMetadataColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Field]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Field" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Grad_ID]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Grad_ID]"
+                      name="Grad_ID" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Grad_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Grad_Name]"
+                      name="Grad_Name" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Git_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Git_URL]"
+                      name="Git_URL" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LinkedIn_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LinkedIn_URL]"
+                      name="LinkedIn_URL" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Graduate_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Graduate_Date]"
+                      name="Graduate_Date" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Track_ID]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Track_ID]"
+                      name="Track_ID" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Com_ID]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Com_ID]"
+                      name="Com_ID" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Com_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Com_Name]"
+                      name="Com_Name" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Hiring_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Hiring_date]"
+                      name="Hiring_date" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Job_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Job_title]"
+                      name="Job_title" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Salary_Range]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Salary_Range]"
+                      name="Salary_Range" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Job_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Job_Type]"
+                      name="Job_Type" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[C_City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[C_City]"
+                      name="C_City" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mas_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Mas_title]"
+                      name="Mas_title" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[University]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[University]"
+                      name="University" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Field]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Field]"
+                      name="Field" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Graduate DF\SSC"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="SSC"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Graduate DF\SSC.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Graduate DF\SSC.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Graduate DF\SSC.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\SSC.Outputs[Derived Column Output].Columns[SSC]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Graduate DF\SSC.Outputs[Derived Column Output].Columns[SSC]"
+                      name="SSC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_UI1)1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_UI1)1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\SSC.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Graduate DF\SSC.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\SSC.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\SSC.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Graduate DF\SSC.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\SSC.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Graduate DF\track Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="track Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_Track]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_Track]) [refTable]
+where [refTable].[Track_id_BK] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Track_SK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Track_id_BK" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Track_Name" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Track_Duration" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Startdate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Enddate" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Iscurrent" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SSC" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Manger_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Track_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Graduate DF\track Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="{2075C602-5319-4ED7-BB9F-8ED0B0B6385A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LocalHost.graduation project_DWH]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Graduate DF\track Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Graduate DF\track Lookup.Inputs[Lookup Input].Columns[Track_ID]"
+                      cachedDataType="i4"
+                      cachedName="Track_ID"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Track_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Track_id_BK</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Graduate DF\track Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Graduate DF\track Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\track Lookup.Outputs[Lookup Match Output].Columns[Track_SK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Graduate DF\track Lookup.Outputs[Lookup Match Output].Columns[Track_SK]"
+                      name="Track_SK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Track_SK</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\track Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Graduate DF\track Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Graduate DF\track Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Graduate DF\track Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\track Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\track Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Graduate DF\track Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\track Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Graduate DF\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Graduate DF\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Grad_ID]"
+                      cachedDataType="i4"
+                      cachedName="Grad_ID"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Grad_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Grad_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Grad_Name"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Grad_Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Git_URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Git_URL"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Git_URL]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Git_URL]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[LinkedIn_URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="LinkedIn_URL"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[LinkedIn_URL]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[LinkedIn_URL]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Graduate_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Graduate_Date"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Graduate_Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Graduate_Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Track_ID]"
+                      cachedDataType="i4"
+                      cachedName="Track_ID"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Track_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Track_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Com_ID]"
+                      cachedDataType="i4"
+                      cachedName="Com_ID"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Com_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Com_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Com_Name"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Com_Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Hiring_date]"
+                      cachedDataType="dbDate"
+                      cachedName="Hiring_date"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hiring_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Hiring_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Job_title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Job_title"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_title]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Job_title]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Salary_Range]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Salary_Range"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Salary_Range]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Salary_Range]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Job_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Job_Type"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Job_Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[C_City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="C_City"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_City]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[C_City]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Mas_title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Mas_title"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mas_title]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Mas_title]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Country"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Country]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[University]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="University"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[University]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[University]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Field]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Field"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Field]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Field]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[SSC]"
+                      cachedDataType="ui1"
+                      cachedName="SSC"
+                      lineageId="Package\Graduate DF\SSC.Outputs[Derived Column Output].Columns[SSC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[SSC]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 1].Columns[Track_SK]"
+                      cachedDataType="i4"
+                      cachedName="Track_SK"
+                      lineageId="Package\Graduate DF\track Lookup.Outputs[Lookup Match Output].Columns[Track_SK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Track_SK]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Graduate DF\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Grad_ID]"
+                      cachedDataType="i4"
+                      cachedName="Grad_ID"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Grad_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Grad_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Grad_Name"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Grad_Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Git_URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Git_URL"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Git_URL]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Git_URL]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[LinkedIn_URL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="LinkedIn_URL"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[LinkedIn_URL]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[LinkedIn_URL]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Graduate_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Graduate_Date"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Graduate_Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Graduate_Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Track_ID]"
+                      cachedDataType="i4"
+                      cachedName="Track_ID"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Track_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Track_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Com_ID]"
+                      cachedDataType="i4"
+                      cachedName="Com_ID"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Com_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Com_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Com_Name"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_Name]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Com_Name]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Hiring_date]"
+                      cachedDataType="dbDate"
+                      cachedName="Hiring_date"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Hiring_date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Hiring_date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Job_title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Job_title"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_title]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Job_title]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Salary_Range]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Salary_Range"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Salary_Range]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Salary_Range]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Job_Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Job_Type"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_Type]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Job_Type]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[C_City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="C_City"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[C_City]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[C_City]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Mas_title]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Mas_title"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Mas_title]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Mas_title]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Country"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Country]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[University]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="University"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[University]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[University]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Field]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Field"
+                      lineageId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output].Columns[Field]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Field]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[SSC]"
+                      cachedDataType="ui1"
+                      cachedName="SSC"
+                      lineageId="Package\Graduate DF\SSC.Outputs[Derived Column Output].Columns[SSC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[SSC]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Graduate DF\Union All.Inputs[Union All Input 2].Columns[Track_SK]"
+                      cachedDataType="i4"
+                      cachedName="Track_SK"
+                      lineageId="Package\Graduate DF\track Lookup.Outputs[Lookup Match Output].Columns[Track_SK]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Track_SK]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Graduate DF\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Graduate DF\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Grad_ID]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Grad_ID]"
+                      name="Grad_ID" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Grad_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Grad_Name]"
+                      name="Grad_Name" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Git_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Git_URL]"
+                      name="Git_URL" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[LinkedIn_URL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[LinkedIn_URL]"
+                      name="LinkedIn_URL" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Graduate_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Graduate_Date]"
+                      name="Graduate_Date" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Track_ID]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Track_ID]"
+                      name="Track_ID" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Com_ID]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Com_ID]"
+                      name="Com_ID" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Com_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Com_Name]"
+                      name="Com_Name" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Hiring_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Hiring_date]"
+                      name="Hiring_date" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Job_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Job_title]"
+                      name="Job_title" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Salary_Range]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Salary_Range]"
+                      name="Salary_Range" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Job_Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Job_Type]"
+                      name="Job_Type" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[C_City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[C_City]"
+                      name="C_City" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Mas_title]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Mas_title]"
+                      name="Mas_title" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[University]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[University]"
+                      name="University" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Field]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Field]"
+                      name="Field" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[SSC]"
+                      dataType="ui1"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[SSC]"
+                      name="SSC" />
+                    <outputColumn
+                      refId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Track_SK]"
+                      dataType="i4"
+                      lineageId="Package\Graduate DF\Union All.Outputs[Union All Output 1].Columns[Track_SK]"
+                      name="Track_SK" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Graduate DF.Paths[Changing Attribute Updates Output]"
+              endId="Package\Graduate DF\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Changing Attribute Updates Output"
+              startId="Package\Graduate DF\Graduates Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
+            <path
+              refId="Package\Graduate DF.Paths[Derived Column Output]"
+              endId="Package\Graduate DF\track Lookup.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Graduate DF\SSC.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Graduate DF.Paths[Derived Column Output1]"
+              endId="Package\Graduate DF\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Graduate DF\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Graduate DF.Paths[Derived Column Output2]"
+              endId="Package\Graduate DF\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Graduate DF\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Graduate DF.Paths[Historical Attribute Inserts Output]"
+              endId="Package\Graduate DF\Derived Column.Inputs[Derived Column Input]"
+              name="Historical Attribute Inserts Output"
+              startId="Package\Graduate DF\Graduates Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+            <path
+              refId="Package\Graduate DF.Paths[Lookup Match Output]"
+              endId="Package\Graduate DF\Graduates Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Lookup Match Output"
+              startId="Package\Graduate DF\track Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Graduate DF.Paths[New Output]"
+              endId="Package\Graduate DF\Union All.Inputs[Union All Input 1]"
+              name="New Output"
+              startId="Package\Graduate DF\Graduates Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Graduate DF.Paths[OLE DB Command Output]"
+              endId="Package\Graduate DF\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\Graduate DF\OLE DB Command.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\Graduate DF.Paths[OLE DB Source Output]"
+              endId="Package\Graduate DF\SSC.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Graduate DF\OLE DB Source.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Graduate DF.Paths[Union All Output 1]"
+              endId="Package\Graduate DF\Derived Column 1.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Graduate DF\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\Graduate DF"
+          TopLeft="208.571429015422,84.1176469850912" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Graduate DF">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Graduate DF\OLE DB Source"
+          TopLeft="156.1,5.49999999999995" />
+        <NodeLayout
+          Size="96.8,41.6"
+          Id="Package\Graduate DF\SSC"
+          TopLeft="182.5,107.1" />
+        <EdgeLayout
+          Id="Package\Graduate DF.Paths[OLE DB Source Output]"
+          TopLeft="230.9,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\Graduate DF\track Lookup"
+          TopLeft="161.3,208.7" />
+        <EdgeLayout
+          Id="Package\Graduate DF.Paths[Derived Column Output]"
+          TopLeft="230.9,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="259.2,41.6"
+          Id="Package\Graduate DF\Graduates Slowly Changing Dimension"
+          TopLeft="101.3,310.3" />
+        <EdgeLayout
+          Id="Package\Graduate DF.Paths[Lookup Match Output]"
+          TopLeft="230.9,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Graduate DF\Derived Column"
+          TopLeft="17.5,411.9" />
+        <EdgeLayout
+          Id="Package\Graduate DF.Paths[Historical Attribute Inserts Output]"
+          TopLeft="168.1,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-74.2,59.9999999999999"
+              Start="0,0"
+              End="-74.2,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.40733197556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.40733197556"
+                    Point2="0,20.40733197556"
+                    Point3="-4,20.40733197556" />
+                  <mssgle:LineSegment
+                    End="-70.2,20.40733197556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-70.2,20.40733197556"
+                    Point2="-74.2,20.40733197556"
+                    Point3="-74.2,24.40733197556" />
+                  <mssgle:LineSegment
+                    End="-74.2,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-112.15638671875,25.40733197556,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Graduate DF\OLE DB Command"
+          TopLeft="5.50000000000003,513.5" />
+        <EdgeLayout
+          Id="Package\Graduate DF.Paths[Derived Column Output1]"
+          TopLeft="90.9,453.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Graduate DF\Union All"
+          TopLeft="170.9,615.099999999999" />
+        <EdgeLayout
+          Id="Package\Graduate DF.Paths[New Output]"
+          TopLeft="230.9,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.6666666666667,263.2"
+              Start="0,0"
+              End="18.6666666666667,255.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,151.842105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,151.842105263158"
+                    Point2="0,155.842105263158"
+                    Point3="4,155.842105263158" />
+                  <mssgle:LineSegment
+                    End="14.6666666666667,155.842105263158" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.6666666666667,155.842105263158"
+                    Point2="18.6666666666667,155.842105263158"
+                    Point3="18.6666666666667,159.842105263158" />
+                  <mssgle:LineSegment
+                    End="18.6666666666667,255.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.7580533854167,160.842105263158,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Graduate DF.Paths[OLE DB Command Output]"
+          TopLeft="87.9,555.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="124.333333333333,59.9999999999999"
+              Start="0,0"
+              End="124.333333333333,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5263157894736"
+                    Point2="0,35.5263157894736"
+                    Point3="4,35.5263157894736" />
+                  <mssgle:LineSegment
+                    End="120.333333333333,35.5263157894736" />
+                  <mssgle:CubicBezierSegment
+                    Point1="120.333333333333,35.5263157894736"
+                    Point2="124.333333333333,35.5263157894736"
+                    Point3="124.333333333333,39.5263157894736" />
+                  <mssgle:LineSegment
+                    End="124.333333333333,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Graduate DF\Derived Column 1"
+          TopLeft="149.7,716.699999999999" />
+        <EdgeLayout
+          Id="Package\Graduate DF.Paths[Union All Output 1]"
+          TopLeft="230.9,656.699999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Graduate DF\Insert Destination"
+          TopLeft="149.7,818.299999999999" />
+        <EdgeLayout
+          Id="Package\Graduate DF.Paths[Derived Column Output2]"
+          TopLeft="230.9,758.299999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="174.4,41.6"
+          Id="Package\Graduate DF\OLE DB Command 1"
+          TopLeft="291.7,411.9" />
+        <EdgeLayout
+          Id="Package\Graduate DF.Paths[Changing Attribute Updates Output]"
+          TopLeft="293.7,351.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85.2,59.9999999999999"
+              Start="0,0"
+              End="85.2,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.40733197556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.40733197556"
+                    Point2="0,20.40733197556"
+                    Point3="4,20.40733197556" />
+                  <mssgle:LineSegment
+                    End="81.2,20.40733197556" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81.2,20.40733197556"
+                    Point2="85.2,20.40733197556"
+                    Point3="85.2,24.40733197556" />
+                  <mssgle:LineSegment
+                    End="85.2,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.93390625,25.40733197556,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Graduate DF\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Graduate DF\track Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Track]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Graduate DF\Graduates Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{2075C602-5319-4ED7-BB9F-8ED0B0B6385A}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dim_Graduate]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[C_City]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Com_city&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_ID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Com_id_BK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Com_Name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Com_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Country]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Country&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Field]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Field&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Git_URL]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Git_URL&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_ID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Grad_id_BK&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Grad_Name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Grad_name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Graduate_Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Gradute_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Hiring_date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Hiring_date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_title]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Job_title&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Job_Type]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Job_Type&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[LinkedIn_URL]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;LinkedIn_URL&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Mas_title]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Mas_title&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[Salary_Range]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Salary_Range&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;SSC.Outputs[Derived Column Output].Columns[SSC]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;SSC&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;track Lookup.Outputs[Lookup Match Output].Columns[Track_SK]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Track_SK_fk&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[University]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;University&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;Startdate&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;Enddate&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Graduate DF\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
